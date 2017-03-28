@@ -5,6 +5,11 @@ class Location {
         public readonly name: string,
         public readonly roles: string[] = []
     ) { }
+
+    get randomRole() {
+        var i = Math.floor(Math.random() * this.roles.length)
+        return this.roles[i]
+    }
 }
 
 const locations = new Library<Location>()
@@ -174,12 +179,80 @@ locations.add(new Location('Polar Station', [
     'Meteorologiest'
 ]))
 
-locations.add(new Location('Police Station'))
-locations.add(new Location('Restaurant'))
-locations.add(new Location('School'))
-locations.add(new Location('Service Station'))
-locations.add(new Location('Space Station'))
-locations.add(new Location('Submarine'))
-locations.add(new Location('Supermarket'))
-locations.add(new Location('Theater'))
-locations.add(new Location('University'))
+locations.add(new Location('Police Station', [
+    'Detective', 'Lawyer', 'Journalist', 'Forensic Scientist',
+    'Evidence Archivist',
+    'Patrol Officer', 'Criminal'
+]))
+locations.add(new Location('Restaurant', [
+    'Musician',
+    'Customer',
+    'Table Busser',
+    'Host',
+    'Head Chef',
+    'Food Critic',
+    'Server'
+]))
+locations.add(new Location('School', [
+    'Gym Teacher',
+    'Student',
+    'Principal',
+    'Security Guard',
+    'Janitor',
+    'Lunch Lady',
+    'Maintenance Man'
+]))
+locations.add(new Location('Service Station', [
+    'Manager',
+    'Tire Specialist',
+    'Motorcyclist',
+    'Car Owner',
+    'Car Washer',
+    'Diagonstic Tech',
+    'Auto Mechanic'
+]))
+locations.add(new Location('Space Station', [
+    'Engineer',
+    'Alien',
+    'Tourist',
+    'Pilot',
+    'Mission Commander',
+    'Scientist',
+    'Doctor'
+]))
+locations.add(new Location('Submarine', [
+    'Cook',
+    'Captain',
+    'Sonar Operator',
+    'Weapons Technician',
+    'Sailor',
+    'Radioman',
+    'Navigator'
+]))
+locations.add(new Location('Supermarket', [
+    'Customer',
+    'Cashier',
+    'Butcher',
+    'Janitor',
+    'Produce Manager',
+    'Food Sample Demo',
+    'Shelf Stocker'
+]))
+locations.add(new Location('Theater', [
+    'Coat Check',
+    'Cue Card Prompter',
+    'Ticket Office Cashier',
+    'Theater Visitor',
+    'Director',
+    'Actor',
+    'Crewman'
+]))
+locations.add(new Location('University', [
+    'Graduate Student',
+    'Professor',
+    'Dean',
+    'Psychologist',
+    'Mainenance Man',
+    'Student',
+    'Advisor'
+]))
