@@ -5,6 +5,9 @@ import {
     getMuiTheme,
     lightBaseTheme
 } from 'material-ui/styles'
+import * as reactTapPlugin from 'react-tap-event-plugin'
+
+reactTapPlugin()
 
 class App extends React.Component<{}, {}>{
     render() {
