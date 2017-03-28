@@ -2,6 +2,8 @@ import { readFile, readFileSync } from 'fs'
 import { createServer } from 'http'
 import * as socketIO from 'socket.io'
 
+import players from './components/players'
+
 const INDEX_HTML = readFileSync('./index.html', 'utf-8')
 const app = createServer((req, res) => {
     if (req.url == '/') {
@@ -26,6 +28,8 @@ app.listen(8080, () => {
 })
 
 io.on('connection', socket => {
+    players.addPlayer(socket)
     socket.on('disconnect', () => {
+        players.delete(socket.id)
     })
 })
