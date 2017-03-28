@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import {
+    AppBar
+} from 'material-ui'
+import {
     MuiThemeProvider,
     getMuiTheme,
     lightBaseTheme
@@ -15,7 +18,20 @@ class App extends React.Component<{}, {}>{
     render() {
         return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <div>
-                <h1>Node Spyfall</h1>
+                <AppBar
+                    title='Node Spyfall'
+                    titleStyle={{
+                        cursor: 'pointer'
+                    }}
+                />
+                <div style={{
+                    position: 'absolute',
+                    top: 65,
+                    bottom: 0,
+                    width: '100%',
+                    overflowY: 'auto'
+                }}>
+                </div>
             </div>
         </MuiThemeProvider>
     }
