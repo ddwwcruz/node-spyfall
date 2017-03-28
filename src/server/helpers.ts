@@ -14,6 +14,12 @@ export function mergeObj<A, B>(argsa: A, argsb: B): A & B {
 }
 
 export class ExtendedMap<K, V> extends Map<K, V> {
+    *map<U>(iterator: (v: V, k: K) => U) {
+        for (let [k, v] of this) {
+            yield iterator(v, k)
+        }
+    }
+
     get random(): [K, V] {
         var keys = [...this.keys()]
         var keyIndex = Math.floor(Math.random() * keys.length)
