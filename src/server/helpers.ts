@@ -12,3 +12,13 @@ export function mergeObj<A, B>(argsa: A, argsb: B): A & B {
 
     return res
 }
+
+export class ExtendedMap<K, V> extends Map<K, V> {
+    get random(): [K, V] {
+        var keys = [...this.keys()]
+        var keyIndex = Math.floor(Math.random() * keys.length)
+        var getKey = keys[keyIndex]
+
+        return [getKey, this.get(getKey)]
+    }
+}
