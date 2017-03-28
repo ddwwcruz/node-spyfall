@@ -6,7 +6,9 @@ export default class Player {
     constructor(
         private socket: Socket,
         private storedName = socket.id
-    ) { }
+    ) {
+        this.askName()
+    }
 
     get name() {
         return this.storedName
@@ -14,5 +16,9 @@ export default class Player {
 
     set name(args: string) {
         this.storedName = args
+    }
+
+    private askName() {
+        this.socket.emit('ask name')
     }
 }
