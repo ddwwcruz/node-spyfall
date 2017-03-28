@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": true,
+    "inlineSourceMap": true,
+    "outDir": "../../build/server"
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.js"
+  ]
+}
