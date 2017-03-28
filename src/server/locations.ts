@@ -92,15 +92,87 @@ locations.add(new Location('Day Spa', [
     'Beautician'
 ]))
 
-locations.add(new Location('Embassy'))
-locations.add(new Location('Hospital'))
-locations.add(new Location('Hotel'))
-locations.add(new Location('Military Base'))
-locations.add(new Location('Movie Studio'))
-locations.add(new Location('Ocean Liner'))
-locations.add(new Location('Passenger Train'))
-locations.add(new Location('Pirate Ship'))
-locations.add(new Location('Polar Station'))
+locations.add(new Location('Embassy', [
+    'Security Guard',
+    'Admin Assistant',
+    'Ambassador',
+    'Government Official',
+    'Tourist',
+    'Refugee',
+    'Diplomat'
+]))
+locations.add(new Location('Hospital', [
+    'Nurse',
+    'Doctor',
+    'Anesthesiologist',
+    'Intern',
+    'Patient',
+    'Therapist',
+    'Surgeon'
+]))
+locations.add(new Location('Hotel', [
+    'Doorman',
+    'Security Guard',
+    'Hotel Manager',
+    'Housekeeper',
+    'Hotel Guest',
+    'Bartender',
+    'Valet'
+]))
+locations.add(new Location('Military Base', [
+    'Deserter',
+    'Colonel',
+    'Medic',
+    'Soldier',
+    'Sniper',
+    'XO (Exec. Officer)',
+    'Tank Commander'
+]))
+locations.add(new Location('Movie Studio', [
+    'Stuntman',
+    'Sound Engineer',
+    'Cameraman',
+    'Director',
+    'Costume Artist',
+    'Actor',
+    'Producer'
+]))
+locations.add(new Location('Ocean Liner', [
+    'Rich Passenger',
+    'Cook',
+    'Captain',
+    'Bartender',
+    'Musician',
+    'Waiter',
+    'Ship Mechanic'
+]))
+locations.add(new Location('Passenger Train', [
+    'Mechanic',
+    'Border Patrol',
+    'Chef',
+    'Engineer',
+    'Steward',
+    'Ticket Taker',
+    'Passenger'
+]))
+locations.add(new Location('Pirate Ship', [
+    'Cook',
+    'Sailor',
+    'Slave',
+    'Cannoneer',
+    'Bound Prisoner',
+    'Cabin Boy',
+    'Pirate Captain'
+]))
+locations.add(new Location('Polar Station', [
+    'Medic',
+    'Geologist',
+    'Expedition Leader',
+    'Biologist',
+    'Radioman',
+    'Hydrologist',
+    'Meteorologiest'
+]))
 
 locations.add(new Location('Police Station'))
 locations.add(new Location('Restaurant'))
