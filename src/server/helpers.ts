@@ -1,38 +1,20 @@
 
-export function mergeObj<A, B, C, D, E>(
-    argsa: A,
-    argsb: B = null,
-    argsc: C = null,
-    argsd: D = null,
-    argse: E = null
-): A & B & C & D & E {
-    var res = <A & B & C & D & E>{}
+export function mergeObj<A, B>(argsa: A, argsb: B): A & B {
+    var res = <A & B>{}
 
     for (let a in argsa) {
-        (<A>res)[a] = argsa[a]
+        if (typeof argsa[a] == 'function') {
+            (<A>res)[a] = (<any>argsa[a]).bind(res)
+        } else {
+            (<A>res)[a] = argsa[a]
+        }
     }
 
-    if (argsb) {
-        for (let a in argsb) {
+    for (let a in argsb) {
+        if (typeof argsb[a] == 'function') {
+            (<B>res)[a] = (<any>argsb[a]).bind(res)
+        } else {
             (<B>res)[a] = argsb[a]
-        }
-    }
-
-    if (argsc) {
-        for (let a in argsc) {
-            (<C>res)[a] = argsc[a]
-        }
-    }
-
-    if (argsd) {
-        for (let a in argsd) {
-            (<D>res)[a] = argsd[a]
-        }
-    }
-
-    if (argse) {
-        for (let a in argse) {
-            (<E>res)[a] = argse[a]
         }
     }
 
