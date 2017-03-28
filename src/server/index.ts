@@ -24,3 +24,8 @@ const io = socketIO(app)
 app.listen(8080, () => {
     console.log('App is listening')
 })
+
+io.on('connection', socket => {
+    socket.on('disconnect', () => {
+    })
+})
