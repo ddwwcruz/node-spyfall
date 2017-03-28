@@ -4,7 +4,6 @@ import * as socketIO from 'socket.io'
 
 const INDEX_HTML = readFileSync('./index.html', 'utf-8')
 const app = createServer((req, res) => {
-    console.log(req.url)
     if (req.url == '/') {
         res.end(INDEX_HTML)
     } else if (req.url == '/js/index.js') {
