@@ -15,6 +15,16 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/js/:file', (req, res) => {
+    readFile('./build/cli/' + req.params.file, 'utf-8', (err, data) => {
+        if (err) {
+            res.status(404).end('/*Not Found*/')
+        } else {
+            res.status(200).end(data)
+        }
+    })
+})
+
 app.listen(8080, () => {
     console.log('App listening on port 8080')
 })
