@@ -9,6 +9,10 @@ export default class Player {
         private storedName = socket.id
     ) {
         this.askName()
+
+        socket.on('give name', (name: string) => {
+            this.name = name
+        })
     }
 
     get name() {
