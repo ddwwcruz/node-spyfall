@@ -5,6 +5,7 @@ import {
     getMuiTheme,
     lightBaseTheme
 } from 'material-ui/styles'
+import * as io from 'socket.io-client'
 import * as reactTapPlugin from 'react-tap-event-plugin'
 
 reactTapPlugin()
@@ -20,3 +21,8 @@ class App extends React.Component<{}, {}>{
 }
 
 render(<App />, document.getElementById('app'))
+
+const socket = io()
+socket.on('connect', () => {
+    console.log('We connected')
+})
