@@ -3,9 +3,9 @@ import * as SocketIO from 'socket.io'
 type Socket = SocketIO.Socket
 
 export default class Player {
-    private storedName: string = null
     constructor(
-        private socket: Socket
+        private socket: Socket,
+        private storedName = socket.id
     ) { }
 
     get name() {
