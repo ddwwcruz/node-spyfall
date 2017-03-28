@@ -27,4 +27,11 @@ export default class Library<T> extends Map<number, T> {
             yield iterator(value, key)
         }
     }
+
+    get random(): [number, T] {
+        var keys = [...this.keys()]
+        var getKey = Math.floor(Math.random() * keys.length)
+
+        return [getKey, this.get(getKey)]
+    }
 }
