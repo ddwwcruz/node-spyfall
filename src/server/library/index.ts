@@ -5,7 +5,7 @@ export default class Library<T> extends Map<number, T> {
 
     add(value: T, key = this.ai.nextValue) {
         this.set(key, value)
-        return this
+        return key
     }
 
     set(key: number, value: T) {
