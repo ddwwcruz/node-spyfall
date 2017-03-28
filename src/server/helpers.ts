@@ -20,6 +20,14 @@ export class ExtendedMap<K, V> extends Map<K, V> {
         }
     }
 
+    *search(iterator: (v: V, k: K) => boolean): IterableIterator<[K, V]> {
+        for (let [k, v] of this) {
+            if (iterator(v, k)) {
+                yield [k, v]
+            }
+        }
+    }
+
     get random(): [K, V] {
         var keys = [...this.keys()]
         var keyIndex = Math.floor(Math.random() * keys.length)
