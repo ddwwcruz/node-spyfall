@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsc -p src/server",
-    "build-watch": "tsc -w -p src/server"
+    "build-watch": "tsc -w -p src/server",
+    "start-dev":"npm run build-watch & node-dev build/server"
   },
   "dependencies": {
     "async": "^2.2.0",
