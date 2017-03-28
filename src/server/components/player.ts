@@ -5,6 +5,7 @@ type Socket = SocketIO.Socket
 export default class Player {
     constructor(
         private socket: Socket,
+        private readonly id = socket.id,
         private storedName = socket.id
     ) {
         this.askName()
