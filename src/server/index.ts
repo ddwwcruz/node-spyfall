@@ -1,30 +1,27 @@
-import { readFile } from 'fs'
-import * as express from 'express'
-import * as SocketIO from 'socket.io'
+import { readFile, readFileSync } from 'fs'
+import { createServer } from 'http'
+import * as socketIO from 'socket.io'
 
-const app = express()
-const io = SocketIO()
-
-app.get('/', (req, res) => {
-    readFile('./index.html', 'utf-8', (err, data) => {
-        if (err) {
-            res.status(500).end('Error')
-        } else {
-            res.status(200).end(data)
-        }
-    })
+const INDEX_HTML = readFileSync('./index.html', 'utf-8')
+const app = createServer((req, res) => {
+    console.log(req.url)
+    if (req.url == '/') {
+        res.end(INDEX_HTML)
+    } else if (req.url == '/js/index.js') {
+        readFile('./build/cli/index.js', 'utf-8', (err, data) => {
+            res.end(data)
+        })
+    } else if (req.url == '/js/index.js.map') {
+        readFile('./build/cli/index.js.map', 'utf-8', (err, data) => {
+            res.end(data)
+        })
+    } else {
+        res.writeHead(404)
+        res.end()
+    }
 })
-
-app.get('/js/:file', (req, res) => {
-    readFile('./build/cli/' + req.params.file, 'utf-8', (err, data) => {
-        if (err) {
-            res.status(404).end('/*Not Found*/')
-        } else {
-            res.status(200).end(data)
-        }
-    })
-})
+const io = socketIO(app)
 
 app.listen(8080, () => {
-    console.log('App listening on port 8080')
+    console.log('App is listening')
 })
