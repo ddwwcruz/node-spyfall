@@ -19,7 +19,7 @@ class App extends React.Component<{}, {}>{
         return <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <div>
                 <AppBar
-                    title='Node Spyfall'
+                    title='Spyfall'
                     titleStyle={{
                         cursor: 'pointer'
                     }}
