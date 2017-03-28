@@ -30,7 +30,8 @@ export default class Library<T> extends Map<number, T> {
 
     get random(): [number, T] {
         var keys = [...this.keys()]
-        var getKey = Math.floor(Math.random() * keys.length)
+        var keyIndex = Math.floor(Math.random() * keys.length)
+        var getKey = keys[keyIndex]
 
         return [getKey, this.get(getKey)]
     }
