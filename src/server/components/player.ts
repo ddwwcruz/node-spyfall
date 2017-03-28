@@ -26,4 +26,11 @@ export default class Player {
     private askName() {
         this.socket.emit('ask name')
     }
+
+    setTeammateName(id: string, name: string) {
+        this.socket.emit('set teammate name', {
+            id,
+            name
+        })
+    }
 }
