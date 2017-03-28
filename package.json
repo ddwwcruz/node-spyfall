@@ -2,8 +2,8 @@
   "name": "node-spyfall",
   "version": "0.0.1",
   "scripts": {
-    "build": "tsc -p src/server",
-    "build-watch": "tsc -w -p src/server",
+    "build": "tsc -p src/server && webpack",
+    "build-watch": "tsc -w -p src/server & webpack -w",
     "start-dev": "npm run build-watch & node-dev build/server"
   },
   "dependencies": {
