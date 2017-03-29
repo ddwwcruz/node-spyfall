@@ -4,7 +4,8 @@
     "module": "commonjs",
     "allowJs": true,
     "inlineSourceMap": true,
-    "outDir": "../../build/server"
+    "outDir": "../../build/server",
+    "pretty": true
   },
   "include": [
     "**/*.ts",
