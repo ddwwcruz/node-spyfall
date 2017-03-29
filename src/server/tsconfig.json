@@ -5,7 +5,8 @@
     "allowJs": true,
     "inlineSourceMap": true,
     "outDir": "../../build/server",
-    "pretty": true
+    "pretty": true,
+    "experimentalAsyncFunctions": true
   },
   "include": [
     "**/*.ts",
