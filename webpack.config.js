@@ -20,9 +20,9 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.tsx?$/,
+                test: /\.(t|j)sx?$/,
                 loader: "ts-loader",
-                exclude: /src\/server/
+                include: /src\/cli/
             }
         ]
     },
