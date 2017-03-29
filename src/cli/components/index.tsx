@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Broadcaster from '../../server/broadcaster/broadcaster'
+import { Broadcaster } from '../../server/broadcaster'
 
 interface Subscription<T> {
     id: number
